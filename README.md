@@ -40,7 +40,7 @@ Valuation methods typically fall into two main categories:
 1. absolute valuation, and
 2. relative valuation.
 
-I don't like using absolute valuation because it requires a lot of assumptions. Therefore here I'm using relative valuation method.
+I don't like using absolute valuation because it requires a lot of assumptions. Therefore here I'm pnly using relative valuation method.
 
 ## Step 4: Is there a wide moat around the business?
 
