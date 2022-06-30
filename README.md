@@ -81,7 +81,7 @@ This is the **most important** step, and unfortunately it can't be evaluated qua
 ## Question 5: What are the risks?
 
 This is the **second most important** step, and unfortunately it can't be evaluated quantatively neither.
-Porter's Five Forces [What is Strategy?: An Illustrated Guide to Michael Porter](https://www.amazon.com/What-Strategy-Illustrated-Michael-Porter/dp/1633698238/ref=sr_1_6?crid=HJEFT70R6TBI&keywords=Porter%2527s+Five+Forces&qid=1656604757&s=books&sprefix=porter%2527s+five+forces%252Cstripbooks%252C58&sr=1-6)&_encoding=UTF8&tag=happyhz-20&linkCode=ur2&linkId=87660c855040cb88ac21f3a9076d2614&camp=1789&creative=9325) are used to evaluate the risks. Porter's Five Forces is a framework for analyzing a company's competitive environment. The Five Forces model is named after Harvard Business School professor, Michael E. Porter
+Porter's Five Forces [What is Strategy?: An Illustrated Guide to Michael Porter](https://www.amazon.com/What-Strategy-Illustrated-Michael-Porter/dp/1633698238/ref=sr_1_6?crid=HJEFT70R6TBI&keywords=Porter%2527s+Five+Forces&qid=1656604757&s=books&sprefix=porter%2527s+five+forces%252Cstripbooks%252C58&sr=1-6) are used to evaluate the risks. Porter's Five Forces is a framework for analyzing a company's competitive environment. The Five Forces model is named after Harvard Business School professor, Michael E. Porter
 <img width="932" alt="Screen Shot 2022-06-30 at 1 58 28 AM" src="https://user-images.githubusercontent.com/34038625/176603462-5aa909f1-d172-4625-a2aa-071dfe01c52a.png">
 
 ## Question 6: How is the management team?
