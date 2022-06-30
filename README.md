@@ -10,6 +10,14 @@ Great invectors like Warren Buffet, Charlie Munger, Peter Lynch, Bill Ackman, Mi
 
 **Over the past 18 years, Bill Ackman has generated a 17.1% annualized return against 10.7% for the S&P 500. Peter Lynch earned 29% a year for 13 Years. How do they achieve this? Because they both have developed their own framework for stock investing, and done their due diligence on the business behind the stocks they are buying. That's also why I'm building this checklist for me to have a better judgement, and make an informed decision**.
 
+And again this framework is just my thought process, and you should read great books on investment, and develop your own. The following books are recommended:
+1. The intelligent investor by Ben Graham https://www.amazon.ca/Intelligent-Investor-Definitive-Value-Investing/dp/0060555661
+2. Warren Buffett and the Interpretation of Financial Statements by Mary Buffet https://www.amazon.ca/Warren-Buffett-Interpretation-Financial-Statements/dp/1849833192/ref=sr_1_1?crid=1DWA37288MRO1&keywords=mary+buffet&qid=1656611840&s=books&sprefix=mary+buffet%2Cstripbooks%2C72&sr=1-1
+3. The Little Book That Builds Wealth: The Knockout Formula for Finding Great Investments by Pat Dorsey
+4. What is Strategy?: An Illustrated Guide to Michael Porter (Porter's Five Forces) by Joan Magretta https://www.amazon.ca/What-Strategy-Illustrated-Michael-Porter/dp/1633698238/ref=sr_1_6?crid=HJEFT70R6TBI&keywords=Porter%27s+Five+Forces&qid=1656604757&s=books&sprefix=porter%27s+five+forces%2Cstripbooks%2C58&sr=1-6)
+5. 7 Powers: The Foundations of Business Strategy by Hamilton Helmer https://www.amazon.ca/7-Powers-Foundations-Business-Strategy/dp/0998116319
+
+
 As Warren Buffet used to say, it's okay to miss out companies with great growth, but it's not okay if you buy a stock without understanding the business behind it. **If you don't do the research and don't understand the business, you are just gambling**.
 
 *“Charlie Munger has said that accumulating the first $100,000 from a standing start, with no seed money, is the most difficult part of building wealth. Making the first million was the next big hurdle. To do that, a person must consistently underspend his income. Getting wealthy, he explains, is like rolling a snowball. It helps to start on the top of a long hill—start early and try to roll that snowball for a very long time.”*
