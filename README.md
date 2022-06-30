@@ -6,7 +6,7 @@ To make a conclusion whether you should buy the stock, **the following 7 questio
 
 Keep in mind that “Investing is more art than science,” American investor Howard S. Marks is supposed to have said. So you should not just blindly follow my thought process of evaluating a stock.
 
-Great invectors like Warren Buffet, Charlie Munger, Peter Lynch, Bill Ackman, Michael Burry keep emphasizing that you should do your own research on the business behind a stock, listen to opinions that are different from theirs, and form your own opinion. Even the greatest investors like Buffet and Peter Lynch have wrong judgement about their investment, no one can avoid it, but that doesn't mean there is no way we can maximize the chances of picking a stock with great growth. All you can do is to minimize the risks by doing research, and having a diversified investment portforlio .
+Great invectors like Warren Buffet, Charlie Munger, Peter Lynch, Bill Ackman, Michael Burry keep emphasizing that you should do your own research on the business behind a stock, listen to opinions that are different from theirs, and form your own opinion. Even the greatest investors like Buffet and Peter Lynch have wrong judgement about their investment, no one can avoid it, but that doesn't mean there is no way we can maximize the chances of picking a stock with great growth. As Warren Buffet used to say, it's okay to miss out companies with great growth, but it's not okay if you buy a stock without understanding the business behind it. **If you don't do the research and don't understand the business, you are just gambling**. All you can do is to minimize the risks by doing research, and having a diversified investment portforlio .
 
 **Over the past 18 years, Bill Ackman has generated a 17.1% annualized return against 10.7% for the S&P 500. Peter Lynch earned 29% a year for 13 Years. How do they achieve this? Because they both have developed their own framework for stock investing, and done their due diligence on the business behind the stocks they are buying. That's also why I'm building this checklist for me to have a better judgement, and make an informed decision**.
 
@@ -17,8 +17,6 @@ And again this framework is just my thought process, and you should read great b
 4. What is Strategy?: An Illustrated Guide to Michael Porter (Porter's Five Forces) by Joan Magretta https://www.amazon.ca/What-Strategy-Illustrated-Michael-Porter/dp/1633698238/ref=sr_1_6?crid=HJEFT70R6TBI&keywords=Porter%27s+Five+Forces&qid=1656604757&s=books&sprefix=porter%27s+five+forces%2Cstripbooks%2C58&sr=1-6)
 5. 7 Powers: The Foundations of Business Strategy by Hamilton Helmer https://www.amazon.ca/7-Powers-Foundations-Business-Strategy/dp/0998116319
 
-
-As Warren Buffet used to say, it's okay to miss out companies with great growth, but it's not okay if you buy a stock without understanding the business behind it. **If you don't do the research and don't understand the business, you are just gambling**.
 
 *“Charlie Munger has said that accumulating the first $100,000 from a standing start, with no seed money, is the most difficult part of building wealth. Making the first million was the next big hurdle. To do that, a person must consistently underspend his income. Getting wealthy, he explains, is like rolling a snowball. It helps to start on the top of a long hill—start early and try to roll that snowball for a very long time.”*
 
