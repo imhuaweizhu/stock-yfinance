@@ -18,10 +18,10 @@ As Warren Buffet used to say, it's okay to miss out companies with great growth,
 
 The same concept applies to compound interest and wealth building. Let's say John saved $100,000 at the age of 30, and Mary saved 100,000 at the age of 40, both invested the money in the stock market with annual gain/interest of 10.72% (the S&P 500 for the years 1991 to 2020, the average stock market return for the last 30 years is 10.72%), and no extra yearly contribution/investment thereafter, how much difference in term of total value of money do yo think John and Mary will have when they both retire at the age of 65? It's a whopping $2,255,705.61. That is almost 2.3 millions difference.
 
-John's initial investment of 100,000 after 65-30=35 years:
+**John's initial investment of 100,000 after 65-30=35 years**:
 <img width="733" alt="Screen Shot 2022-06-30 at 1 11 49 PM" src="https://user-images.githubusercontent.com/34038625/176738761-c841e9f8-4cea-49c0-a097-badecec87294.png">
 
-Mary's initial investment of 100,000 after 65-40=25 years:
+**Mary's initial investment of 100,000 after 65-40=25 years**:
 <img width="731" alt="Screen Shot 2022-06-30 at 1 20 58 PM" src="https://user-images.githubusercontent.com/34038625/176739185-d40b31b3-88b6-4b1f-b2be-8749fae830b1.png">
 
 You can check this yourself on this website https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/
