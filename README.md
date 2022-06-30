@@ -42,6 +42,8 @@ The stock price in the past is compared to
 1. QQQ (the best growth ETF in my opinion) and 
 2. SCHD (the best dividend ETF in my opinion)
 
+![ben](https://user-images.githubusercontent.com/34038625/176795959-147a278a-5f8a-4dca-9927-f3c95bc8a594.png)
+
 ## Question 2: Financial health examination.
 
 Below is my checklist for a financial health examination.
@@ -56,7 +58,15 @@ Below is my checklist for a financial health examination.
 8. Decreasing Long-term debt
 9. Decreasing outstanding shares
 
-If a company can meet 6 of the above 9 requirements, I think it's financially healthy
+If a company can meet 6 of the above 9 requirements, I think it's financially healthy.
+
+<img width="616" alt="Screen Shot 2022-06-30 at 6 42 50 PM" src="https://user-images.githubusercontent.com/34038625/176796209-5d6ce330-b5b9-4436-bd83-1a56213027fd.png">
+
+![ic](https://user-images.githubusercontent.com/34038625/176796216-c0412ae7-9079-48bc-b368-bb0c4d808c60.png)
+
+![cf](https://user-images.githubusercontent.com/34038625/176796228-d572ad96-2d74-46d3-9d7d-3f84c7791726.png)
+
+![bs](https://user-images.githubusercontent.com/34038625/176796238-74c22686-f59a-45c8-b03e-747343327b3b.png)
 
 ## Question 3: Is it undervalued?
 
@@ -65,6 +75,8 @@ Valuation methods typically fall into two main categories:
 2. relative valuation.
 
 I don't like using absolute valuation because it requires a lot of assumptions. Therefore here I'm only using the relative valuation method.
+
+<img width="1068" alt="Screen Shot 2022-06-30 at 6 54 22 PM" src="https://user-images.githubusercontent.com/34038625/176796037-d543158b-76df-40d2-ad6a-cc794fa1258b.png">
 
 ## Question 4: Is there a wide moat around the business?
 
@@ -85,6 +97,7 @@ Porter's Five Forces [What is Strategy?: An Illustrated Guide to Michael Porter]
 1. Is the CEO honest, trustworthy, transparent, and open to discussions on issues and risks the company is facing?
 2. Skin in the game
 3. How do the employees rate the company? (Glassdoor review)
+<img width="353" alt="Screen Shot 2022-06-30 at 6 56 02 PM" src="https://user-images.githubusercontent.com/34038625/176796120-a950994e-4025-4ee7-bc6d-355ddb135cd3.png">
 
 ## Question 7: Are customers happy about the products/services?
 
