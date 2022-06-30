@@ -10,6 +10,12 @@ Great invectors like Warren Buffet, Charlie Munger, Peter Lynch, Bill Ackman, Pa
 
 As Warren Buffet used to say, it's okay to miss out companies with great growth, but it's not okay if you buy a stock without understanding the business behind it. **If you don't understand the business, you are just gambling**.
 
+“Charlie Munger has said that accumulating the first $100,000 from a standing start, with no seed money, is the most difficult part of building wealth. Making the first million was the next big hurdle. To do that, a person must consistently underspend his income. Getting wealthy, he explains, is like rolling a snowball. It helps to start on the top of a long hill—start early and try to roll that snowball for a very long time.”
+
+— Janet Lowe, in Damn Right!: Behind the Scenes with Berkshire Hathaway Billionaire Charlie Munger
+
+Getting your first 100,000 dolloars, save it and invest it, will change your life. The quicker you can hit that milestone, the better. This is the advice coming from the legendary investor and billionaire, Charlie Munger. The reason why Munger is advocating hitting $100,000 dollars mark as quickly as possible
+
 
 ## Question 1: How is the growth in the past
 
