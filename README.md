@@ -2,7 +2,7 @@
 
 Evaluate how the business behind a stock is doing using yfinance library https://github.com/ranaroussi/yfinance
 
-To make a conclusion whether you should buy the stock, **the following 7 questions needs to be answered**. 
+To make a conclusion whether you should buy the stock, **the following 7 questions need to be answered**. 
 
 **As Warren Buffet used to say, it's okay to miss out great companies with great growth, but it's not okay if you buy a stock without understanding the business behind it. If you don't do the research and don't understand the business, you are just gambling**. Great invectors like Warren Buffet, Charlie Munger, Peter Lynch, Bill Ackman, Michael Burry keep emphasizing that you should do your own research on the business behind a stock, listen to opinions that are different from theirs, and form your own opinion. Even the greatest investors like Buffet and Peter Lynch have wrong judgement about their investment, no one can avoid it, but that doesn't mean there is no way we can maximize the chances of picking a stock with great growth.  All you need to do is to minimize the risks by doing research, and having a diversified investment portforlio .
 
