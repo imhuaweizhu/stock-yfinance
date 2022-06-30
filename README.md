@@ -82,9 +82,9 @@ Porter's Five Forces [What is Strategy?: An Illustrated Guide to Michael Porter]
 
 ## Question 6: How is the management team?
 
-1. Is the CEO honest, trustworthy, transparent and open to discussions on issues and risks the company is facing
+1. Is the CEO honest, trustworthy, transparent, and open to discussions on issues and risks the company is facing?
 2. Skin in the game
-3. Do the employees like the company? (Glassdoor review)
+3. How do the employees rate the company? (Glassdoor review)
 
 ## Question 7: Are customers happy about the products/services?
 
