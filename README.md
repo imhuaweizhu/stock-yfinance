@@ -11,7 +11,7 @@ As Warren Buffet used to say, it's okay to miss out companies with great growth,
 
 ## Step 1: How is the growth in the past
 
-A good growth in the past shows the business is doing something right in the market. But if its growth is no better than Exchange-Traded Fund, why would I buy the stock?
+A good growth in the past shows the business is doing something right in the market. But if its growth is no better than Exchange-Traded Fund, why would I bother buying the stock?
 
 The stock price in the past is compared to 
 
@@ -32,7 +32,7 @@ Below is my checklist for financial health examination.
 8. Decreasing Long-term debt
 9. Decreasing outstanding shares
 
-If a company can meet 6 of the above 9 criterias, I think it's the financial healthy
+If a company can meet 6 of the above 9 criterias, I think it's financially healthy
 
 ## Step 3: Is it overvalued?
 
