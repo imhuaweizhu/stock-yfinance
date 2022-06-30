@@ -30,12 +30,12 @@ The same concept applies to compound interest and wealth building. Let's say Joh
 
 You can check this yourself on this website https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/
 
-So do your research and start rolling your snowball, and let time do the wealth building work.
+So do your research and start rolling your snowball, and let time do the wealth-building work.
 
 
 ## Question 1: How is the growth in the past
 
-A good growth in the past shows the business is doing something right in the market. But if its growth is no better than Exchange-Traded Fund, why would I bother buying the stock?
+Good growth in the past shows the business is doing something right in the market. But if its growth is no better than Exchange-Traded Fund, why would I bother buying the stock?
 
 The stock price in the past is compared to 
 
@@ -44,19 +44,19 @@ The stock price in the past is compared to
 
 ## Question 2: Financial health examination.
 
-Below is my checklist for financial health examination.
+Below is my checklist for a financial health examination.
 
-1. Growing revenue (preferablely > 10%)
+1. Growing revenue (preferablly > 10%)
 2. Improved revenue quality (increased diversity, better revenue type)
-3. Growing FCF: FCF stands for free cashflow
-4. Growing OCF/S ratio: OCF stands for cashflow from operating, S is sales, i.e. revenue
+3. Growing FCF: FCF stands for free cash flow
+4. Growing OCF/S ratio: OCF stands for cash flow from operating, S is sales, i.e. revenue
 5. Growing Net income/S ratio
 6. Quick ratio (preferablely > 1)
 7. FCF/long-term Debt ratio > 0.25
 8. Decreasing Long-term debt
 9. Decreasing outstanding shares
 
-If a company can meet 6 of the above 9 criterias, I think it's financially healthy
+If a company can meet 6 of the above 9 requirements, I think it's financially healthy
 
 ## Question 3: Is it undervalued?
 
@@ -64,11 +64,11 @@ Valuation methods typically fall into two main categories:
 1. absolute valuation, and
 2. relative valuation.
 
-I don't like using absolute valuation because it requires a lot of assumptions. Therefore here I'm only using relative valuation method.
+I don't like using absolute valuation because it requires a lot of assumptions. Therefore here I'm only using the relative valuation method.
 
 ## Question 4: Is there a wide moat around the business?
 
-This is the **most important** step, and unfortunately it can't be evaluated quantatively by using numbers in income statement, balance sheet, and cashflow statement.
+This is the **most important** step, and unfortunately, it can't be evaluated quantitatively by using numbers in the income statement, balance sheets, and cash flow statement.
 
 [7 Powers: The Foundations of Business Strategy](https://www.amazon.com/7-Powers-Foundations-Business-Strategy/dp/0998116319?&_encoding=UTF8&tag=happyhz-20&linkCode=ur2&linkId=19382442d54ee60dd4a79d787ee93e37&camp=1789&creative=9325) by Hamilton Helmer are used to determine how wide the moat is.
 
