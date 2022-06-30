@@ -25,7 +25,7 @@ Below is my checklist for financial health examination.
 8. Decreasing Long-term debt
 9. Decreasing outstanding shares
 
-If a company can meet 6 of the above 9 criterias, I think its the financial health is strong.
+If a company can meet 6 of the above 9 criterias, I think it's the financial healthy
 
 ## Step 3: Is it overvalued?
 
@@ -49,4 +49,12 @@ This is the **second most important** step, and unfortunately it can't be evalua
 Porter's Five Forces are used to evaluate the risks. Porter's Five Forces is a framework for analyzing a company's competitive environment. The Five Forces model is named after Harvard Business School professor, Michael E. Porter
 <img width="932" alt="Screen Shot 2022-06-30 at 1 58 28 AM" src="https://user-images.githubusercontent.com/34038625/176603462-5aa909f1-d172-4625-a2aa-071dfe01c52a.png">
 
+## Step 6: How is the management team?
 
+1. Is the CEO honest, trustworthy, transparent and open to discussions on issues and risks the company is facing
+2. Skin in the game
+3. Does the employees like the company? (Glassdoor review)
+
+## Step 7: Are customers happy about the products/services?
+
+Dollar-based retention rate, customer review websites.
