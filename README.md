@@ -14,7 +14,7 @@ As Warren Buffet used to say, it's okay to miss out companies with great growth,
 
 — Janet Lowe, in Damn Right!: Behind the Scenes with Berkshire Hathaway Billionaire Charlie Munger
 
-Getting your first 100,000 dolloars, save it and invest it, will change your life. The quicker you can hit that milestone, the better. This is the advice coming from the legendary investor and billionaire, Charlie Munger. The reason why Munger is advocating hitting $100,000 dollars mark as quickly as possible
+Getting your first 100,000 dolloars, save it and invest it, will change your life. The quicker you can hit that milestone, the better. This is the advice coming from the legendary investor and billionaire, Charlie Munger. The reason why Munger is advocating hitting $100,000 dollars mark as quickly as possible has to do with two very simple and powerful words: **compound interest**. The words compound interest are two of **the most magical words for your wealth building journey** once you truly understand the concept of compound interest it changes the way you view money. Compound interest is the interest on a deposit or loan calculated based on both the initial principal and the accumulated interest from previous periods. The definition is far from inspiring, and doesn't truly do compound interest justice. You can think of compound interest as a snowball rolling down a long hill you do the work of making the first little snowball while you are starting on the top of the hill. You then roll the snowball down the fill with each roll, the snowball is 
 
 
 ## Question 1: How is the growth in the past
