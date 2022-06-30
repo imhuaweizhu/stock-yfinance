@@ -2,7 +2,7 @@
 
 Evaluate how the business behind a stock is doing using yfinance library https://github.com/ranaroussi/yfinance
 
-To make a conclusion whether you should buy the stock, **the following questions needs to be answered**. 
+To make a conclusion whether you should buy the stock, **the following 7 questions needs to be answered**. 
 
 Keep in mind that “Investing is more art than science,” American investor Howard S. Marks is supposed to have said. So you should not just blindly follow my process of evaluating a stock.
 
