@@ -62,7 +62,7 @@ Below is my checklist for financial health examination.
 
 If a company can meet 6 of the above 9 criterias, I think it's financially healthy
 
-## Question 3: Is it overvalued?
+## Question 3: Is it undervalued?
 
 Valuation methods typically fall into two main categories: 
 1. absolute valuation, and
