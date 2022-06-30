@@ -24,7 +24,7 @@ The same concept applies to compound interest and wealth building. Let's say Joh
 
 <img width="733" alt="Screen Shot 2022-06-30 at 1 11 49 PM" src="https://user-images.githubusercontent.com/34038625/176738761-c841e9f8-4cea-49c0-a097-badecec87294.png">
 
-**Mary's initial investment of 100,000 after 65-40=25 years of compouding becomes 1.28 million.**
+**Mary's initial investment of 100,000 after 65-40=25 years of compounding becomes 1.28 million.**
 
 <img width="731" alt="Screen Shot 2022-06-30 at 1 20 58 PM" src="https://user-images.githubusercontent.com/34038625/176739185-d40b31b3-88b6-4b1f-b2be-8749fae830b1.png">
 
