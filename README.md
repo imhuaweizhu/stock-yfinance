@@ -42,7 +42,7 @@ The stock price in the past is compared to
 1. QQQ (the best growth ETF in my opinion) and 
 2. SCHD (the best dividend ETF in my opinion)
 
-![ben](https://user-images.githubusercontent.com/34038625/176795959-147a278a-5f8a-4dca-9927-f3c95bc8a594.png)
+![benchmark](https://user-images.githubusercontent.com/34038625/176829545-205acf06-4a66-42a3-9eb0-c65f0cb5862e.png)
 
 ## Question 2: Financial health examination.
 
@@ -60,13 +60,13 @@ Below is my checklist for a financial health examination.
 
 If a company can meet 6 of the above 9 requirements, I think it's financially healthy.
 
-<img width="616" alt="Screen Shot 2022-06-30 at 6 42 50 PM" src="https://user-images.githubusercontent.com/34038625/176796209-5d6ce330-b5b9-4436-bd83-1a56213027fd.png">
+<img width="705" alt="Screen Shot 2022-07-01 at 1 23 55 AM" src="https://user-images.githubusercontent.com/34038625/176829580-91b531e2-5003-406d-a65f-b63dbd77bc69.png">
 
-![ic](https://user-images.githubusercontent.com/34038625/176796216-c0412ae7-9079-48bc-b368-bb0c4d808c60.png)
+![ic](https://user-images.githubusercontent.com/34038625/176829594-ed1f167f-6424-4b48-9166-9645f01ad4f6.png)
 
-![cf](https://user-images.githubusercontent.com/34038625/176796228-d572ad96-2d74-46d3-9d7d-3f84c7791726.png)
+![cs](https://user-images.githubusercontent.com/34038625/176829614-5f620b1e-30a7-4dd2-8664-fed87c01b0e1.png)
 
-![bs](https://user-images.githubusercontent.com/34038625/176796238-74c22686-f59a-45c8-b03e-747343327b3b.png)
+![bs](https://user-images.githubusercontent.com/34038625/176829626-f4fc8578-26fd-473a-80ed-09c4c5871678.png)
 
 ## Question 3: Is there a wide moat around the business?
 
@@ -89,7 +89,10 @@ Porter's Five Forces [What is Strategy?: An Illustrated Guide to Michael Porter]
 3. How do the employees rate the company? (Glassdoor review)
 4. A reasonable strategy to widen its moat, increase revenue, explore revenue optionality and improve operating efficiency inside the company
 
-<img width="353" alt="Screen Shot 2022-06-30 at 6 56 02 PM" src="https://user-images.githubusercontent.com/34038625/176796120-a950994e-4025-4ee7-bc6d-355ddb135cd3.png">
+![shares](https://user-images.githubusercontent.com/34038625/176829697-b90758dd-6e1e-4157-a414-f6f4a9a3f0f9.png)
+
+<img width="366" alt="Screen Shot 2022-07-01 at 1 24 50 AM" src="https://user-images.githubusercontent.com/34038625/176829720-081c5132-45c2-4da9-8148-61615c3cd637.png">
+
 
 ## Question 6: Are customers happy about the products/services?
 
@@ -110,4 +113,8 @@ Valuation methods typically fall into two main categories:
 
 I don't like using absolute valuation because it requires a lot of assumptions, which means you are inviting too much uncertainty in the valuation. Therefore here I'm only using the relative valuation method.
 
-<img width="1068" alt="Screen Shot 2022-06-30 at 6 54 22 PM" src="https://user-images.githubusercontent.com/34038625/176796037-d543158b-76df-40d2-ad6a-cc794fa1258b.png">
+<img width="990" alt="Screen Shot 2022-07-01 at 1 25 20 AM" src="https://user-images.githubusercontent.com/34038625/176829761-343ea6e2-851a-45e3-8d64-c059279cbfd5.png">
+
+## Conclusion: Buy
+
+<img width="1219" alt="Screen Shot 2022-07-01 at 1 30 48 AM" src="https://user-images.githubusercontent.com/34038625/176830087-cb61c1bd-a1d1-4fc3-879f-3355eff5695e.png">
