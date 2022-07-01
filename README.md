@@ -87,7 +87,7 @@ Porter's Five Forces [What is Strategy?: An Illustrated Guide to Michael Porter]
 1. Is the CEO honest, trustworthy, transparent, and open to discussions on issues and risks the company is facing?
 2. Skin in the game
 3. How do the employees rate the company? (Glassdoor review)
-4. Reasonable strategy to widen its moat and to increase revenue
+4. A reasonable strategy to widen its moat, increase revenue, explore revenue optionality and improve operating efficiency inside the company
 
 <img width="353" alt="Screen Shot 2022-06-30 at 6 56 02 PM" src="https://user-images.githubusercontent.com/34038625/176796120-a950994e-4025-4ee7-bc6d-355ddb135cd3.png">
 
@@ -97,7 +97,10 @@ Dollar-based retention rate, customer review websites.
 
 ## Question 7: How is growth potential in the future?
 
-After you evaluate the strength (financial health and moat) and risks of this business, you can come up with a growth rate for the company in the next 3 years. I'm not comofortable to predict more than revenue growth for more than 3 years, because there is too much uncertainty in 3 years.
+After you evaluate the strength (financial health and moat) and risks of this business, you can come up with a growth rate for the company in the next 3 years. I'm not comfortable predicting more than revenue growth for more than 3 years, because there is too much uncertainty in 3 years.
+
+1. Revenue growth from the current revenue sources
+2. Revenue growth from other optionality
 
 ## Question 8: Is it undervalued?
 
