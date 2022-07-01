@@ -117,4 +117,5 @@ I don't like using absolute valuation because it requires a lot of assumptions, 
 
 ## Conclusion: Buy
 
-<img width="1219" alt="Screen Shot 2022-07-01 at 1 30 48 AM" src="https://user-images.githubusercontent.com/34038625/176830087-cb61c1bd-a1d1-4fc3-879f-3355eff5695e.png">
+
+<img width="1217" alt="Screen Shot 2022-07-01 at 1 38 14 AM" src="https://user-images.githubusercontent.com/34038625/176830837-bb7669ac-197c-4946-9ab2-4682159323d1.png">
