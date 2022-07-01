@@ -2,7 +2,7 @@
 
 Evaluate how the business behind a stock is doing using yfinance library https://github.com/ranaroussi/yfinance
 
-To make a conclusion on whether you should buy a stock, **the following 7 questions need to be answered**. 
+To make a conclusion on whether you should buy a stock, **the following 8 questions need to be answered**. 
 
 **As Warren Buffet used to say, it's okay to miss out on great companies with great growth, but it's not okay if you buy a stock without understanding the business behind it. If you don't do the research and don't understand the business, you are just gambling**. Great investors like Warren Buffet, Charlie Munger, Peter Lynch, Bill Ackman, and Michael Burry keep emphasizing that you should do your own research on the business behind a stock, listen to opinions that are different from theirs, and form your own opinion. Even the greatest investors like Buffet and Peter Lynch have wrong judgment about their investment, no one can avoid it, but that doesn't mean there is no way we can maximize the chances of picking a stock with great growth.  All you need to do is to minimize the risks by doing research and having a diversified investment portfolio.
 
@@ -68,17 +68,7 @@ If a company can meet 6 of the above 9 requirements, I think it's financially he
 
 ![bs](https://user-images.githubusercontent.com/34038625/176796238-74c22686-f59a-45c8-b03e-747343327b3b.png)
 
-## Question 3: Is it undervalued?
-
-Valuation methods typically fall into two main categories: 
-1. absolute valuation, and
-2. relative valuation.
-
-I don't like using absolute valuation because it requires a lot of assumptions. Therefore here I'm only using the relative valuation method.
-
-<img width="1068" alt="Screen Shot 2022-06-30 at 6 54 22 PM" src="https://user-images.githubusercontent.com/34038625/176796037-d543158b-76df-40d2-ad6a-cc794fa1258b.png">
-
-## Question 4: Is there a wide moat around the business?
+## Question 3: Is there a wide moat around the business?
 
 This is the **most important** step, and unfortunately, it can't be evaluated quantitatively by using numbers in the income statement, balance sheets, and cash flow statement.
 
@@ -86,19 +76,35 @@ This is the **most important** step, and unfortunately, it can't be evaluated qu
 
 <img width="1097" alt="Screen Shot 2022-06-30 at 1 48 24 AM" src="https://user-images.githubusercontent.com/34038625/176602666-1795b283-d6ff-47d9-91ec-8375be442ad7.png">
 
-## Question 5: What are the risks?
+## Question 4: What are the risks?
 
 This is the **second most important** step, and unfortunately, it can't be evaluated quantitatively either.
 Porter's Five Forces [What is Strategy?: An Illustrated Guide to Michael Porter](https://www.amazon.com/What-Strategy-Illustrated-Michael-Porter/dp/1633698238/ref=sr_1_6?crid=HJEFT70R6TBI&keywords=Porter%2527s+Five+Forces&qid=1656604757&s=books&sprefix=porter%2527s+five+forces%252Cstripbooks%252C58&sr=1-6) is used to evaluate the risks. Porter's Five Forces is a framework for analyzing a company's competitive environment. The Five Forces model is named after Harvard Business School professor, Michael E. Porter.
 <img width="932" alt="Screen Shot 2022-06-30 at 1 58 28 AM" src="https://user-images.githubusercontent.com/34038625/176603462-5aa909f1-d172-4625-a2aa-071dfe01c52a.png">
 
-## Question 6: How is the management team?
+## Question 5: How is the management team?
 
 1. Is the CEO honest, trustworthy, transparent, and open to discussions on issues and risks the company is facing?
 2. Skin in the game
 3. How do the employees rate the company? (Glassdoor review)
+4. Reasonable strategy to widen its moat and to increase revenue
+
 <img width="353" alt="Screen Shot 2022-06-30 at 6 56 02 PM" src="https://user-images.githubusercontent.com/34038625/176796120-a950994e-4025-4ee7-bc6d-355ddb135cd3.png">
 
-## Question 7: Are customers happy about the products/services?
+## Question 6: Are customers happy about the products/services?
 
 Dollar-based retention rate, customer review websites.
+
+## Question 7: How is growth potential in the future?
+
+After you evaluate the strength (financial health and moat) and risks of this business, you can come up with a growth rate for the company in the next 3 years. I'm not comofortable to predict more than revenue growth for more than 3 years, because there is too much uncertainty in 3 years.
+
+## Question 8: Is it undervalued?
+
+Valuation methods typically fall into two main categories: 
+1. absolute valuation, and
+2. relative valuation.
+
+I don't like using absolute valuation because it requires a lot of assumptions, which means you are inviting too much uncertainty in the valuation. Therefore here I'm only using the relative valuation method.
+
+<img width="1068" alt="Screen Shot 2022-06-30 at 6 54 22 PM" src="https://user-images.githubusercontent.com/34038625/176796037-d543158b-76df-40d2-ad6a-cc794fa1258b.png">
