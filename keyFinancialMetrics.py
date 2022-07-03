@@ -343,9 +343,9 @@ class KeyFinancials:
         operating_income_to_revenue = []
         i=0
         for i in range(num_bars):
-            cost_of_revenue_to_revenue.append(self.get_two_decimals(all_data[1][i]/self.revenue[i]))
-            sga_to_revenue.append(self.get_two_decimals(all_data[2][i]/self.revenue[i]))
-            operating_income_to_revenue.append(self.get_two_decimals(all_data[3][i]/self.revenue[i]))
+            cost_of_revenue_to_revenue.append(self.fix_zero_denominator(all_data[1][i], self.revenue[i]))
+            sga_to_revenue.append(self.fix_zero_denominator(all_data[2][i], self.revenue[i]))
+            operating_income_to_revenue.append(self.fix_zero_denominator(all_data[3][i], self.revenue[i]))
         print("Cost of Revenue (Sales) / Sales =", cost_of_revenue_to_revenue)
         print("SG&A / Sales =", sga_to_revenue)
         print("Operating Income / Sales =", operating_income_to_revenue)
