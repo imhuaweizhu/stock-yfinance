@@ -1,8 +1,8 @@
 # This allows multiple outputs from a single jupyter notebook cell:
 from types import NoneType
 import numpy as np
-from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = "all"
+#from IPython.core.interactiveshell import InteractiveShell
+#InteractiveShell.ast_node_interactivity = "all"
 
 import yfinance as yf
 import pandas as pd
@@ -30,7 +30,7 @@ class KeyFinancials:
                           'marketCap', 'totalDebt', 'totalCash', 
                           'totalRevenue', 'operatingCashflow', 'freeCashflow', 'netIncomeToCommon', 
                           'revenueGrowth', 'quickRatio', 'trailingPE']
-        self.competetors = []
+        self.competitors = []
         # P/S, P/OCF, P/FCF, P/E
         self.industry_average_ratios = []
         self.customized_info_df = []
@@ -38,6 +38,8 @@ class KeyFinancials:
         self.revenue = []
         self.ocf = []
         self.fcf = []
+        self.fcf_to_revenue = [] # I will use this for valuation
+        self.ocf_to_revenue = [] # use this for valuation
 
     # Full period here means 10 years
     # The stock to be investigated may not have 10 years' history
@@ -70,7 +72,6 @@ class KeyFinancials:
             for i in range(number_of_zeros, period_size):
                 stock_price_percentage_change.append(price_period[i]/full_period_price[i_first_nonzero_full_period_price] - 1)
         else:
-            print("price_period[0] = ", price_period[0])
             stock_price_percentage_change = [x/price_period[0] - 1 for x in price_period]
 
         return stock_price_percentage_change
@@ -116,7 +117,7 @@ class KeyFinancials:
 
         # two rows, two columns, first and second plots
         sub1 = fig.add_subplot(2,2,(1,2))
-        sub1.plot(stock_change_10y, label=self.ticker, color = "#FF1493", linestyle="solid")
+        sub1.plot(stock_change_10y, label=self.ticker, color = "m", linestyle="solid")
         sub1.plot(QQQ_change_10y, label='QQQ', color = "#708090", linestyle="solid")
         sub1.plot(SCHD_change_10y, label='SCHD', color = "#708090", linestyle="solid")
         plt.gca().yaxis.grid(True)
@@ -131,7 +132,7 @@ class KeyFinancials:
         SCHD_change_period = self.get_percentage_change_period(SCHD_10y, 0, original_size) 
 
         sub2 = fig.add_subplot(2,2,3)
-        sub2.plot(stock_change_since_IPO, label=self.ticker, color = "#FF1493", linestyle="solid")
+        sub2.plot(stock_change_since_IPO, label=self.ticker, color = "m", linestyle="solid")
         sub2.plot(QQQ_change_period, label='QQQ', color = "#708090", linestyle="solid")
         sub2.plot(SCHD_change_period, label='SCHD', color = "#708090", linestyle="solid")
         plt.gca().yaxis.grid(True)
@@ -145,7 +146,7 @@ class KeyFinancials:
         SCHD_change_period = self.get_percentage_change_period(SCHD_10y, 0, self.size_6m)  
 
         sub3 = fig.add_subplot(2,2,4)
-        sub3.plot(stock_change_last_6months, label=self.ticker, color = "#FF1493", linestyle="solid")
+        sub3.plot(stock_change_last_6months, label=self.ticker, color = "m", linestyle="solid")
         sub3.plot(QQQ_change_period, label='QQQ', color = "#708090", linestyle="solid")
         sub3.plot(SCHD_change_period, label='SCHD', color = "#708090", linestyle="solid")
         sub3.set_title("Comparison - last 6 months (Growth Percentage)")
@@ -223,118 +224,17 @@ class KeyFinancials:
         return all_info, my_info_df, values
 
     def get_customized_info_all_stocks(self):
-        if len(self.competetors) == 0:
-            raise Exception("Sorry, you need to add ticker symbols to the list - instance_name.competetors! ")
+        if len(self.competitors) == 0:
+            raise Exception("Sorry, you need to add ticker symbols to the list - instance_name.competitors! ")
         # df with only one column
         _, my_info_df, _ =  self.get_customized_info_single_stock(self.ticker)
-        # all the columns for competetors' stock
-        for x in self.competetors:
+        # all the columns for competitors' stock
+        for x in self.competitors:
             _, _, values = self.get_customized_info_single_stock(x)
             my_info_df[x] = values
         # Save it
         self.customized_info_df = my_info_df
         return my_info_df
-
-    def calculate3y_value_relative(self, revenue_growth_prediction_list):
-        print("Note that the predicted price (3-year) assumes that the number of shares outstanding stays the same as the current value! ")
-        # ['Current Price', 
-        #  'Market Cap(m)', 'Total Debt(m)', 'Total Cash(m)',
-        #  'Total Revenue(m)', 'Operating Cashflow(m)', 'Free Cashflow(m)', 'Net Income(m)', 
-        #  'Revenue Growth', 'Quick Ratio', 'Debt/FCF',
-        #  'P/S', 'P/OCF', 'P/FCF', 'P/E', 
-        #  'netIncome/S', 'FCF/OCF', 'OCF/S']
-        valuation_df = pd.DataFrame()
-        rows = ['Current Price of ' + self.ticker, 
-                'Valuation using P/S',
-                'Valuation using P/OCF', 
-                'Valuation using P/FCF', 
-                'Valuation using P/E', 
-                'Valuation in 3-years(P/S)']
-        valuation_df.index = rows
-
-        # Get the current price of self.ticker
-        current_price = self.customized_info_df[self.ticker].values[0]
-        PS_ratio = self.customized_info_df[self.ticker].values[11]
-        POCF_ratio = self.customized_info_df[self.ticker].values[12]
-        PFCF_ratio = self.customized_info_df[self.ticker].values[13]
-        PE_ratio = self.customized_info_df[self.ticker].values[14]
-
-        # Calculate the predicted revenue
-        current_revenue = self.customized_info_df[self.ticker].values[4]
-        predicted_revenue_after_3y = current_revenue
-        if len(revenue_growth_prediction_list) != 3:
-            raise Exception("Sorry, we need 3 years of revenue growth assumption! 8 percentage is 0.08!")
-        print("Current Revenue = ", current_revenue)
-        i=0
-        for x in revenue_growth_prediction_list:
-            i += 1
-            predicted_revenue_after_3y = predicted_revenue_after_3y * (1 + x)
-            print("Revenue after ", i, " year = ", predicted_revenue_after_3y)     
-        
-        # Valuation
-        actual_market_cap = self.customized_info_df[self.ticker].values[1]
-        print("Current market cap = ", actual_market_cap)
-        i=0
-        for x in self.competetors:
-            i += 1
-            # Get the ratios of current competetor
-            PS_ratio_x = self.customized_info_df[x].values[11]
-            POCF_ratio_x = self.customized_info_df[x].values[12]
-            PFCF_ratio_x = self.customized_info_df[x].values[13]
-            PE_ratio_x = self.customized_info_df[x].values[14]
-            # PE ratio: the stock under investigation versus the i-th stock in the competitor list
-            PS_ticker_vs_x = PS_ratio/PS_ratio_x
-            POCF_ticker_vs_x = POCF_ratio/POCF_ratio_x
-            PFCF_ticker_vs_x = PFCF_ratio/PFCF_ratio_x
-            PE_ticker_vs_x = PE_ratio/PE_ratio_x
-
-            # Predict the market cap based on the P/S ration of the i-th competitor
-            predicted_market_cap_based_on_x_psratio = PS_ratio_x * predicted_revenue_after_3y
-            predicted_vs_actual = predicted_market_cap_based_on_x_psratio/actual_market_cap
-            predicted_price = current_price * predicted_vs_actual
-
-            cols = [self.get_two_decimals(current_price)]
-            # Calculate price based on the current earning and P/E of the i-th competitor
-            cols.append(self.get_two_decimals(current_price/PS_ticker_vs_x))
-            # Calculate price based on the current earning and P/E of the i-th competitor
-            cols.append(self.get_two_decimals(current_price/POCF_ticker_vs_x))
-            # Calculate price based on the current earning and P/E of the i-th competitor
-            cols.append(self.get_two_decimals(current_price/PFCF_ticker_vs_x))
-            # Calculate price based on the current earning and P/E of the i-th competitor
-            cols.append(self.get_two_decimals(current_price/PE_ticker_vs_x))
-            # Predict price in 3 years based on P/S ratio of the i-th competitor
-            cols.append(self.get_two_decimals(predicted_price))
-
-            x = 'Price based on ' + x
-            valuation_df[x] = cols
-        
-        # add valuation based on stock market average P/E, P/FCF, P/S ratios
-        if len(self.industry_average_ratios) == 0:
-            raise Exception("Sorry, you need to provide the industry average ratios: P/S, P/OCF, P/FCF, P/E!")
-        industry_average_ps = self.industry_average_ratios[0]
-        industry_average_pocf = self.industry_average_ratios[1]
-        industry_average_pfcf = self.industry_average_ratios[2]
-        industry_average_pe = self.industry_average_ratios[3]
-
-        ps_ticker_vs_market = PS_ratio/industry_average_ps
-        pocf_ticker_vs_market = POCF_ratio/industry_average_pocf
-        pfcf_ticker_vs_market = PFCF_ratio/industry_average_pfcf
-        pe_ticker_vs_market = PE_ratio/industry_average_pe
-
-        predicted_market_cap_based_on_industry_psratio = industry_average_ps * predicted_revenue_after_3y
-        predicted_vs_actual = predicted_market_cap_based_on_industry_psratio/actual_market_cap
-        predicted_price = current_price * predicted_vs_actual
-
-        cols = [self.get_two_decimals(current_price)]
-        cols.append(self.get_two_decimals(current_price/ps_ticker_vs_market))
-        cols.append(self.get_two_decimals(current_price/pocf_ticker_vs_market))
-        cols.append(self.get_two_decimals(current_price/pfcf_ticker_vs_market))
-        cols.append(self.get_two_decimals(current_price/pe_ticker_vs_market))
-        cols.append(self.get_two_decimals(predicted_price))
-
-        x = 'Price based on industry average'
-        valuation_df[x] = cols
-        return valuation_df
 
     def plot_shares(self):
         num_shares_df = pd.DataFrame()
@@ -396,8 +296,7 @@ class KeyFinancials:
         info_list = ['Total Revenue', 
                      'Cost Of Revenue', 
                      'Selling General Administrative', 
-                     'Operating Income', 
-                     'Net Income Applicable To Common Shares']
+                     'Operating Income']
 
         # Get all data
         all_data = []
@@ -416,13 +315,13 @@ class KeyFinancials:
         br1 = np.arange(num_bars)
         br2 = [x + barWidth for x in br1]
         br3 = [x + barWidth for x in br2]
+        br4 = [x + barWidth for x in br3]
 
         # first plot
         sub1 = fig.add_subplot(1,2,1)
         self.revenue = all_data[0]
-        plt.bar(br1, self.revenue, color ='c', width = barWidth, label ='Revenue')
+        plt.bar(br1, self.revenue, color ='c', width = barWidth, label ='Sales')
         plt.bar(br2, all_data[3], color ='#FF66B2', width = barWidth, label ='Operating Income')
-        plt.bar(br3, all_data[4], color ='#1E90FF', width = barWidth, label ='Net Income')
         sub1.legend(bbox_to_anchor =(-0.1, 1))
         sub1.set_title("Income statement (in millions)")
         plt.xticks([r + barWidth for r in range(num_bars)], years)
@@ -430,22 +329,34 @@ class KeyFinancials:
 
         # second plot
         sub2 = fig.add_subplot(1,2,2)
-        i=0
+        # Revenue growth
+        revenue_growth_percentage = []
+        i = 1
+        for i in range(num_bars):
+            temp = self.fix_zero_denominator(self.revenue[i]-self.revenue[i-1], self.revenue[i-1])
+            revenue_growth_percentage.append(temp)
+        print("\nRevenue growth = ",revenue_growth_percentage)
+
+        # Revenue related raios
         cost_of_revenue_to_revenue = []
+        sga_to_revenue = []
         operating_income_to_revenue = []
-        net_income_to_revenue = []
+        i=0
         for i in range(num_bars):
             cost_of_revenue_to_revenue.append(self.get_two_decimals(all_data[1][i]/self.revenue[i]))
+            sga_to_revenue.append(self.get_two_decimals(all_data[2][i]/self.revenue[i]))
             operating_income_to_revenue.append(self.get_two_decimals(all_data[3][i]/self.revenue[i]))
-            net_income_to_revenue.append(self.get_two_decimals(all_data[4][i]/self.revenue[i]))
-        print("\nCost of Revenue / Revenue =", cost_of_revenue_to_revenue)
-        print("OCF / Revenue =", operating_income_to_revenue)
-        print("Net Income / Revenue =", net_income_to_revenue)
-        plt.bar(br1, cost_of_revenue_to_revenue, color ='c', width = barWidth, label ='Cost Of Revenue VS Revenue')
-        plt.bar(br2, operating_income_to_revenue, color ='#FF66B2', width = barWidth, label ='Operating Income VS Revenue')
-        plt.bar(br3, net_income_to_revenue, color ='#1E90FF', width = barWidth, label ='Net Income VS Revenue')
+        print("Cost of Revenue (Sales) / Sales =", cost_of_revenue_to_revenue)
+        print("SG&A / Sales =", sga_to_revenue)
+        print("Operating Income / Sales =", operating_income_to_revenue)
+
+        plt.bar(br1, revenue_growth_percentage, color ='c', width = barWidth, label ='Revenue Growth')
+        plt.bar(br2, cost_of_revenue_to_revenue, color ='#FF66B2', width = barWidth, label ='Cost Of Sales/Sales')
+        plt.bar(br3, sga_to_revenue, color ='#1E90FF', width = barWidth, label ='SG&A/Sales')
+        plt.bar(br4, operating_income_to_revenue, color ='#FFFF00', width = barWidth, label ='Operating Income/Sales')
+        
         sub2.legend(bbox_to_anchor =(1.1, 1))
-        sub2.set_title("Revenue related margins")
+        sub2.set_title("Revenue (Sales) related margins")
         plt.xticks([r + barWidth for r in range(num_bars)], years)
         plt.gca().yaxis.grid(True)
         plt.gca().set_yticklabels([f'{x:.0%}' for x in plt.gca().get_yticks()])
@@ -464,7 +375,8 @@ class KeyFinancials:
         info_list = ['Total Cash From Operating Activities', 
                      'Total Cashflows From Investing Activities', 
                      'Total Cash From Financing Activities', 
-                     'Capital Expenditures']
+                     'Capital Expenditures',
+                     'Net Income']
         
         # Get all data
         all_data = []
@@ -475,11 +387,17 @@ class KeyFinancials:
             all_data.append(temp)
             print(x, "=", temp)
 
+        self.ocf = all_data[0]
+        cfi = all_data[1]
+        cff = all_data[2]
+        capex = all_data[3]
+        net_income = all_data[4]
+
         # Calculate Free Cashflow 
         i = 0
         for i in range(num_bars):
             # CapEx is already negative, that's why it's OCF+CapEx, not OCF-CapEx
-            self.fcf.append(self.get_two_decimals(all_data[0][i]+all_data[3][i]))
+            self.fcf.append(self.get_two_decimals(self.ocf[i]+capex[i]))
         print("Free Cashflow =", self.fcf)
 
         # Make the plot
@@ -495,11 +413,11 @@ class KeyFinancials:
 
         # first plot
         sub1 = fig.add_subplot(1,2,1)
-        self.ocf = all_data[0]
+
         plt.bar(br1, self.ocf, color ='c', width = barWidth, label ='CFO')
-        plt.bar(br2, all_data[1], color ='#FF66B2', width = barWidth, label ='CFI')
-        plt.bar(br3, all_data[2], color ='#1E90FF', width = barWidth, label ='CFF')
-        plt.bar(br4, all_data[3], color ='#FFFF00', width = barWidth, label ='CapEx')
+        plt.bar(br2, cfi, color ='#FF66B2', width = barWidth, label ='CFI')
+        plt.bar(br3, cff, color ='#1E90FF', width = barWidth, label ='CFF')
+        plt.bar(br4, capex, color ='#FFFF00', width = barWidth, label ='CapEx')
         plt.bar(br5, self.fcf, color ='#8A2BE2', width = barWidth, label ='Free Cashflow')
         sub1.legend(bbox_to_anchor=(-0.1, 1))
         sub1.set_title("Cashflow statement (in millions)")
@@ -508,31 +426,33 @@ class KeyFinancials:
 
         # Second plot
         sub2 = fig.add_subplot(1,2,2)
-        # Revenue growth
-        revenue_growth_percentage = []
-        i = 1
-        for i in range(num_bars):
-            temp = self.fix_zero_denominator(self.revenue[i]-self.revenue[i-1], self.revenue[i-1])
-            revenue_growth_percentage.append(temp)
-        print("\nRevenue growth = ",revenue_growth_percentage)
-
-        ocf_to_revenue = []
+        
+        # OCF to revenue
         i = 0
         for i in range(num_bars):
-            ocf_to_revenue.append(self.fix_zero_denominator(self.ocf[i], self.revenue[i]))
-        print("OCF to Revenue = ",ocf_to_revenue)
-
-        fcf_to_revenue = []
+            self.ocf_to_revenue.append(self.fix_zero_denominator(self.ocf[i], self.revenue[i]))
+        print("\nOCF to Revenue = ",self.ocf_to_revenue)
+        
+        # FCF to revenue
         i = 0
         for i in range(num_bars):
-            fcf_to_revenue.append(self.fix_zero_denominator(self.fcf[i], self.revenue[i]))
-        print("FCF to Revenue = ",fcf_to_revenue)
+            self.fcf_to_revenue.append(self.fix_zero_denominator(self.fcf[i], self.revenue[i]))
+        print("FCF to Revenue = ", self.fcf_to_revenue)
 
-        plt.bar(br1, revenue_growth_percentage, color ='c', width = barWidth, label ='Revenue Growth')
-        plt.bar(br2, ocf_to_revenue, color ='#FF66B2', width = barWidth, label ='OCF to Revenue')
-        plt.bar(br3, fcf_to_revenue, color ='#1E90FF', width = barWidth, label ='FCF to Revenue')
+        # Net Income to revenue
+        net_income_to_revenue = []
+        i = 0
+        for i in range(num_bars):
+            net_income_to_revenue.append(self.fix_zero_denominator(net_income[i], self.revenue[i]))
+        print("Net Income to Revenue = ", net_income_to_revenue)
+
+        # plot bar chart
+        plt.bar(br1, self.ocf_to_revenue, color ='c', width = barWidth, label ='OCF to Sales')
+        plt.bar(br2, self.fcf_to_revenue, color ='#FF66B2', width = barWidth, label ='FCF to Sales')
+        plt.bar(br3, net_income_to_revenue, color ='#1E90FF', width = barWidth, label ='Net Income to Sales')
+
         sub2.legend(bbox_to_anchor=(1.1, 1))
-        sub2.set_title("Revenue related margins")
+        sub2.set_title("Revenue (Sales) related margins")
         plt.xticks([r + barWidth for r in range(num_bars)], years)
         plt.gca().yaxis.grid(True)
         plt.gca().set_yticklabels([f'{x:.0%}' for x in plt.gca().get_yticks()])
@@ -610,6 +530,160 @@ class KeyFinancials:
         # Show the image
         plt.show()
 
+    # Calcualte fair stock price
+    def calculate3y_value_relative(self, revenue_growth_prediction_list):
+        print("Note that the predicted price (3-year) assumes that the number of shares outstanding stays the same as the current value! ")
+        # ['Current Price', 
+        #  'Market Cap(m)', 'Total Debt(m)', 'Total Cash(m)',
+        #  'Total Revenue(m)', 'Operating Cashflow(m)', 'Free Cashflow(m)', 'Net Income(m)', 
+        #  'Revenue Growth', 'Quick Ratio', 'Debt/FCF',
+        #  'P/S', 'P/OCF', 'P/FCF', 'P/E', 
+        #  'netIncome/S', 'FCF/OCF', 'OCF/S']
+        valuation_df = pd.DataFrame()
+        rows = ['Current Price of ' + self.ticker, 
+                'Valuation using P/S',
+                'Valuation using P/OCF', 
+                'Valuation using P/FCF', 
+                'Valuation using P/E', 
+                'Valuation in 3-years(P/S)',
+                'Valuation in 3-years(P/OCF)',
+                'Valuation in 3-years(P/FCF)']
+        valuation_df.index = rows
+
+        # Get the current price of self.ticker
+        current_price = self.customized_info_df[self.ticker].values[0]
+        PS_ratio = self.customized_info_df[self.ticker].values[11]
+        POCF_ratio = self.customized_info_df[self.ticker].values[12]
+        PFCF_ratio = self.customized_info_df[self.ticker].values[13]
+        PE_ratio = self.customized_info_df[self.ticker].values[14]
+
+        # Calculate the predicted revenue (3 years later)
+        current_market_cap = self.customized_info_df[self.ticker].values[1]
+        current_revenue = self.customized_info_df[self.ticker].values[4]
+        predicted_revenue_after_3y = current_revenue
+        if len(revenue_growth_prediction_list) != 3:
+            raise Exception("Sorry, we need 3 years of revenue growth assumption! 8 percentage is 0.08!")
+        print("Current Market Cap = ", current_market_cap)
+        print("Current Revenue = ", current_revenue)
+        i=0
+        for x in revenue_growth_prediction_list:
+            i += 1
+            predicted_revenue_after_3y = predicted_revenue_after_3y * (1 + x)
+            print("Predicted revenue after ", i, " year = ", predicted_revenue_after_3y)     
+        
+        # Calculate the predicted OCF (3 years later)
+        print("\n")
+        if len(self.ocf_to_revenue) == 0:
+            raise Exception("Sorry, you need to process cash flow statement first to get OCF to Sales ratio.")
+        sum_ocf_to_revenue = 0
+        for x in self.ocf_to_revenue:
+            sum_ocf_to_revenue += x
+        average_ocf_to_revenue = self.fix_zero_denominator(sum_ocf_to_revenue, len(self.ocf_to_revenue))
+        print("Average OCF/S ratio of last 4 years = ", average_ocf_to_revenue)
+        predicted_ocf_after_3y = average_ocf_to_revenue * predicted_revenue_after_3y
+        print("Predicted OCF after 3 years = ", predicted_ocf_after_3y)
+
+        # Calculate the predicted FCF (3 years later)
+        print("\n")
+        if len(self.fcf_to_revenue) == 0:
+            raise Exception("Sorry, you need to process cash flow statement first to get FCF to Sales ratio.")
+        sum_fcf_to_revenue = 0
+        for x in self.fcf_to_revenue:
+            sum_fcf_to_revenue += x
+        average_fcf_to_revenue = self.fix_zero_denominator(sum_fcf_to_revenue, len(self.fcf_to_revenue))
+        print("Average FCF/S ratio of last 4 years = ", average_fcf_to_revenue)
+        predicted_fcf_after_3y = average_fcf_to_revenue * predicted_revenue_after_3y
+        print("Predicted FCF after 3 years = ", predicted_fcf_after_3y)
+
+        # Valuation
+        i=0
+        for x in self.competitors:
+            # Add the current stock price
+            cols = [self.get_two_decimals(current_price)]
+            i += 1
+            # Get the ratios of current competetor
+            PS_ratio_x = self.customized_info_df[x].values[11]
+            POCF_ratio_x = self.customized_info_df[x].values[12]
+            PFCF_ratio_x = self.customized_info_df[x].values[13]
+            PE_ratio_x = self.customized_info_df[x].values[14]
+
+            # ratios: the stock under investigation versus the i-th stock in the competitor list
+            PS_ticker_vs_x = PS_ratio/PS_ratio_x
+            cols.append(self.get_two_decimals(current_price/PS_ticker_vs_x))
+
+            POCF_ticker_vs_x = POCF_ratio/POCF_ratio_x
+            cols.append(self.get_two_decimals(current_price/POCF_ticker_vs_x))
+
+            PFCF_ticker_vs_x = PFCF_ratio/PFCF_ratio_x
+            cols.append(self.get_two_decimals(current_price/PFCF_ticker_vs_x))
+
+            PE_ticker_vs_x = PE_ratio/PE_ratio_x
+            cols.append(self.get_two_decimals(current_price/PE_ticker_vs_x))
+
+            # Predict the market cap based on the P/S ratio of the i-th competitor
+            predicted_market_cap_based_on_x_psratio = PS_ratio_x * predicted_revenue_after_3y
+            market_cap_predicted_vs_current = predicted_market_cap_based_on_x_psratio/current_market_cap
+            predicted_price_using_PS = market_cap_predicted_vs_current * current_price
+            cols.append(self.get_two_decimals(predicted_price_using_PS))
+
+            # Predict the market cap based on the P/OCF ratio of the i-th competitor
+            predicted_market_cap_based_on_x_pocfratio = POCF_ratio_x * predicted_ocf_after_3y
+            market_cap_predicted_vs_current = predicted_market_cap_based_on_x_pocfratio/current_market_cap
+            predicted_price_using_POCF = market_cap_predicted_vs_current * current_price
+            cols.append(self.get_two_decimals(predicted_price_using_POCF))
+
+            # Predict the market cap based on the P/FCF ratio of the i-th competitor
+            predicted_market_cap_based_on_x_pfcfratio = PFCF_ratio_x * predicted_fcf_after_3y
+            market_cap_predicted_vs_current = predicted_market_cap_based_on_x_pfcfratio/current_market_cap
+            predicted_price_using_PFCF = market_cap_predicted_vs_current * current_price
+            cols.append(self.get_two_decimals(predicted_price_using_PFCF))
+
+            # Add the entire column to the dataframe
+            x = 'Price based on ' + x
+            valuation_df[x] = cols
+        
+        # add valuation based on stock market average P/E, P/FCF, P/S ratios
+        if len(self.industry_average_ratios) == 0:
+            raise Exception("Sorry, you need to provide the industry average ratios: P/S, P/OCF, P/FCF, P/E!")
+        # Current stock price
+        cols = [self.get_two_decimals(current_price)]
+        # Calculate price
+        industry_average_ps = self.industry_average_ratios[0]
+        ps_ticker_vs_market = PS_ratio/industry_average_ps
+        cols.append(self.get_two_decimals(current_price/ps_ticker_vs_market))
+
+        industry_average_pocf = self.industry_average_ratios[1]
+        pocf_ticker_vs_market = POCF_ratio/industry_average_pocf
+        cols.append(self.get_two_decimals(current_price/pocf_ticker_vs_market))
+
+        industry_average_pfcf = self.industry_average_ratios[2]
+        pfcf_ticker_vs_market = PFCF_ratio/industry_average_pfcf
+        cols.append(self.get_two_decimals(current_price/pfcf_ticker_vs_market))
+
+        industry_average_pe = self.industry_average_ratios[3]
+        pe_ticker_vs_market = PE_ratio/industry_average_pe
+        cols.append(self.get_two_decimals(current_price/pe_ticker_vs_market))
+
+        predicted_market_cap_based_on_industry_psratio = industry_average_ps * predicted_revenue_after_3y
+        market_cap_predicted_vs_current = predicted_market_cap_based_on_industry_psratio/current_market_cap
+        predicted_price_using_PS = current_price * market_cap_predicted_vs_current
+        cols.append(self.get_two_decimals(predicted_price_using_PS))
+
+        predicted_market_cap_based_on_industry_pocfratio = industry_average_pocf * predicted_ocf_after_3y
+        market_cap_predicted_vs_current = predicted_market_cap_based_on_industry_pocfratio/current_market_cap
+        predicted_price_using_POCF = current_price * market_cap_predicted_vs_current
+        cols.append(self.get_two_decimals(predicted_price_using_POCF))
+
+        predicted_market_cap_based_on_industry_pfcfratio = industry_average_pfcf * predicted_fcf_after_3y
+        market_cap_predicted_vs_current = predicted_market_cap_based_on_industry_pfcfratio/current_market_cap
+        predicted_price_using_PFCF = current_price * market_cap_predicted_vs_current
+        cols.append(self.get_two_decimals(predicted_price_using_PFCF))
+
+        # Add the entire column to the dataframe
+        x = 'Price based on industry average'
+        valuation_df[x] = cols
+        return valuation_df
+    
     # convert the numbers in a list to numbers expressed in millions
     def get_millions(self, a_list):
         b_list=[]
@@ -664,7 +738,7 @@ class KeyFinancials:
 if __name__ == "__main__":
     ticker_symbol = "BROS"
     BROS_analysis = KeyFinancials(ticker_symbol)
-    BROS_analysis.competetors = ['SBUX', 'MCD']
+    BROS_analysis.competitors = ['SBUX', 'MCD']
     print(BROS_analysis.history_info.cashflow)
     print(BROS_analysis.history_info.cashflow.shape)
     # BROS_analysis.plot_income_statement()
