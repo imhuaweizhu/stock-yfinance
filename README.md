@@ -49,14 +49,10 @@ The stock price in the past is compared to
 Below is my checklist for a financial health examination.
 
 1. Growing revenue (preferablly > 10%)
-2. Improved revenue quality (increased diversity, better revenue type)
-3. Growing FCF: FCF stands for free cash flow
-4. Growing OCF/S ratio: OCF stands for cash flow from operating, S is sales, i.e. revenue
-5. Growing Net income/S ratio
-6. Quick ratio (preferablely > 1)
-7. FCF/long-term Debt ratio > 0.25
-8. Decreasing Long-term debt
-9. Decreasing outstanding shares
+2. Quick ratio (preferablely > 1) and FCF/long-term Debt ratio > 0.25
+3. Growing OCF/S ratio, operating margin: OCF stands for cash flow from operating, S is sales, i.e. revenue
+4. Positive FCF, or net income: FCF stands for free cash flow
+5. Share dilution < 5%
 
 If a company can meet 6 of the above 9 requirements, I think it's financially healthy.
 
